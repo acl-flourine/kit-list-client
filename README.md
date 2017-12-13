@@ -3,7 +3,7 @@
 
 
 ## MVP
-Kit List / Emergency preparedness shopping list generator
+**Kit List**  An emergency preparedness shopping list generator
 - Takes name, number of people in household, number of pets in household, basic elements (heat/snow), medication and generates personalized list based on user profile and number of days selected
 - Persistent user data saved in database
 - FEMA or Red Cross blog rss or Twitter Feed (API)
@@ -43,8 +43,9 @@ User = {
 
 ## Schema
 **User**
-
-user | # of people | heat | snow | medication | pets | days
+---------------------------------------------------------------
+| user | # of people | heat | snow | medication | pets | days |
+---------------------------------------------------------------
 
 **List**
 
