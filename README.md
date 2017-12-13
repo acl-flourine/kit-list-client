@@ -33,12 +33,10 @@ User = {
 **Lists**
 - base (FEMA recommendations)
     - water x number of people (1 gallon)
-- user 
     - pet supplies x number of pets (if pets = true petTemplate.show())
     - medications (if medications = true medTemplate.show())
-- weather
-    - hot (if extremeHeat = true hotTemplate.show())
-    - snow (if snow = true snowTemplate.show())
+- heat (if extremeHeat = true heatTemplate.show())
+- snow (if snow = true snowTemplate.show())
 
 
 ## Schema
