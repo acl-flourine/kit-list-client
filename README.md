@@ -46,4 +46,4 @@ User = {
 user | # of people | heat | snow | medication | pets | days
 
 **List**
-id | item | amount (per person per day)
+id | condition (base, snow or heat) | item | amount (recommended per person per day)
