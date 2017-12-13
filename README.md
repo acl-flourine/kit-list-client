@@ -41,9 +41,11 @@ User = {
 
 ## Schema
 **User**
-
+```
++------+-------------+------+------+------------+------+------+
 | user | # of people | heat | snow | medication | pets | days |
-
++------+-------------+------+------+------------+------+------+
+```
 **List**
 
 | id | condition (base, snow or heat) | item | amount (recommended per person per day) |
