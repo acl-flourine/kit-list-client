@@ -1,8 +1,8 @@
-#Problem Statement
+## Problem Statement
 
 
 
-#MVP
+## MVP
 Kit List / Emergency preparedness shopping list generator
 - Takes name, number of people in household, number of pets in household, basic elements (heat/snow), medication and generates personalized list based on user profile and number of days selected
 - Persistent user data saved in database
@@ -10,23 +10,23 @@ Kit List / Emergency preparedness shopping list generator
 - ESRI Disaster Map (API)
 
 
-#Stretch Goal
+## Stretch Goals
 - Local agency contact inf0 (FEMA / Red Cross)
 - Historical disaster declarations map
 - Pet specificity
 - Save user location and link  
 
 
-#Objects / Methods
+## Objects / Methods
 
 **User Profile**
 User = {
     name: string,
-    household: number,
-    pets: number,
-    snow: boolean
+    householdSize: number,
     heat: boolean
+    snow: boolean
     medication: boolean
+    pets: number,
     number of days: number (set minimum to 3)
     }
 
@@ -41,7 +41,7 @@ User = {
     - snow (if snow = true snowTemplate.show())
 
 
-# Schema
+## Schema
 **User**
 user | # of people | heat | snow | medication | pets | days
 
