@@ -5,25 +5,68 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Kit List</title>
+    <script id="list-template" type="text/x-handlebars-template">
+        <li>{{name}} {{amount}}</li>
+    </script>    
 </head>
 <body>
-    <nav>
-        <ul>
-            <li><a href="">home</a></li>
-            <li><a href="">list</a></li>
-            <li><a href="">about</a></li>
-            <li><a href="">map</a></li>
-        </ul>
-    </nav>
+    
+    <section id="nav">
+        <nav>
+            <ul>
+                <li><a href="/">home</a></li>
+                <li><a href="/">list</a></li>
+                <li><a href="/about" >about</a></li>
+                <li><a href="/map">map</a></li>
+            </ul>
+        </nav>
+    </section>    
+    
     <main>
+        <section id="home-view">
+            <div id="existing-user">
+                <label>Already a user?<input type="text" placeholder="User Name" name="existing"></label>
+                <button type="submit" id="find">Get my Kit List</button>
+            </div>
+            
+            <form="new-user">
+                <fieldset>
+                    <label>User Name<input type="text" name="user-name"></label>
+                    <label>How many people are in your household?<input type="text" name="household"></label>
+                    <label>How many days would you like to prepare for?<input type="text" name="days"></label>
+                    <label>Do you take medication?
+                        <input type="radio" name="meds" value="yes">yes
+                        <input type="radio" name="meds" value="no">no
+                    </label>
+                    <label>Check all that apply:
+                            <input type="checkbox" name="types" value="infant">Infant(s) in home
+                            <input type="checkbox" name="types" value="child">Small child(ren) in home
+                            <input type="checkbox" name="types" value="pets">Pet(s) in home
+                            <input type="checkbox" name="types" value="heat">Extreme heat in region
+                            <input type="checkbox" name="types" value="cold">Extreme cold in region
+                    </label>
+                    <button type="submit" id="submit-user">Submit</button>
+                </fieldset>
+            </form>
+        </section>
+        
+        <section id="list-view">
+            <ul id="list"></ul>
+        </section>
+
+        <section id="about-view">        
+        </section>
+
     </main>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.js"></script>
     <script src="https://cdn.rawgit.com/visionmedia/page.js/master/page.js"></script>
     
-    <script src="scripts/views/listView.js"></script>
     <script src="scripts/models/user.js"></script>
+    <script src="scripts/models/items.js"></script>
+    <script src="scripts/views/listView.js"></script>    
     <script src="scripts/views/aboutView.js"></script>
     <script src="scripts/routes.js"></script>
+
 </body>
 </html>

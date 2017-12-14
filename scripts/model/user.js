@@ -1,1 +1,20 @@
 'use strict';
+
+var app = app || {};
+
+// const API_URL = 'https://kit-list.herokuapp.com'; 
+const API_URL = 'http://localhost:3000';
+
+(function(module) {
+
+    function User (obj) {
+        this.name = obj.name;
+        this.household = obj.household;
+        this.days = obj.days;
+        this.meds = obj.meds;
+        this.types = []
+    };
+
+    module.User = User;
+
+})(app);
