@@ -58,7 +58,10 @@ Item = {
 | item_id | type (base, heat, snow, pets, infant, child) | item | amount (recommended per person per day) |
 +---------+----------------------------------------------+------+-----------------------------------------+
 ```
-**Join** *many-to-many relationship; will be made for each user and purchasedOn will be updated when user clicks item off; include item name and use this to populate each user's list. How to capture date of click?
+**Join** 
+- many-to-many relationship; will be made for each user and purchased
+- On will be updated when user clicks item off; include item name and use this to populate each user's list. 
+- How to capture date of click?
 ```
 +---------+---------+------+-------------+
 | user_id | item_id | item | purchasedOn |
