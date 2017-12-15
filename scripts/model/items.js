@@ -13,6 +13,10 @@ var app = app || {};
 
     Item.all = [];
 
+    Item.fetchAll = () => {
+        // get
+    };
+
     module.Item = Item;
 
 })(app);
