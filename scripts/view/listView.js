@@ -1,6 +1,6 @@
 'use strict';
 
-var app = {} || app;
+var app = app || {};
 
 (function (module) {
 
@@ -29,6 +29,7 @@ var app = {} || app;
             newUser.types.push(ele.value);
         });
         console.log("New user= ", newUser);
+        app.User.dbEntry(newUser);
     }
 
     // listView.initListPage = () => {
@@ -42,3 +43,5 @@ var app = {} || app;
 
     module.listView = listView;
 })(app);
+
+console.log(app);

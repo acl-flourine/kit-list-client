@@ -7,8 +7,8 @@
       "$": true,
       "marked": true,
       "hljs": true,
-      "articleView": true,
-      "Article": true
+      "listView": true,
+      "User": true
     },
     "extends": "eslint:recommended",
     "parserOptions": {
