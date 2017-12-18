@@ -15,7 +15,7 @@ const API_URL = 'http://localhost:3000';
 
     
     User.dbEntry = user => {
-        $.post(`${API_URL}/api/v1/kitlist`, user)
+        $.post(`${API_URL}/api/v1/user`, user)
             .catch(console.error);
     }
     
