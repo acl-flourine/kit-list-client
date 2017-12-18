@@ -3,7 +3,7 @@
 var app = app || {};
 
 // const API_URL = 'https://kit-list.herokuapp.com'; 
-const API_URL = 'http://localhost:5050';
+const API_URL = 'http://localhost:3000';
 
 (function(module) {
     function User (obj) {
@@ -15,7 +15,7 @@ const API_URL = 'http://localhost:5050';
 
     
     User.dbEntry = user => {
-        $.post(`${API_URL}/api/v1`, user)
+        $.post(`${API_URL}/api/v1/kitlist`, user)
             .catch(console.error);
     }
     
