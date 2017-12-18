@@ -11,13 +11,12 @@ const API_URL = 'http://localhost:3000';
         this.name = obj.name;
         this.household = obj.household;
         this.days = obj.days;
-        this.meds = obj.meds;
         this.types = []
     };
 
     
     User.create = () => {
-        // post
+        
     }
     
     User.createItemsTable = function () {

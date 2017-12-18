@@ -1,19 +1,43 @@
 'use strict';
 
-var app = {} || app
+var app = {} || app;
 
 (function (module) {
+
+    const listView = {};
+
     listView.initHomePage = () => {
-        // show form and header, hide about and lists
-    };
+        $('main section').hide();
+        $('#existing-user').parent().show();
+        // event listeners for #find and #submit-user - will listen for the click, call functions
+        $('#find').on('submit', function (ctx) {
+        // get user from join table via user ID, populate list view with that user's items
+        });
+        $('#new-user').on('submit', listView.createUser); 
+};
 
-    listView.initListPage = () => {
-        // hide home and about, show lists
-    };
+    listView.createUser = event => {
+        event.preventDefault();
+        const newUser = {
+            name: $('#new-user input[name="user-name"]').val(),
+            household: $('#new-user input[name="household"]').val(),
+            days: $('#new-user input[name="days"]').val(),
+            types: [],
+        }
+        $("input:checked").each((i, ele) => {
+            console.log(ele);
+            newUser.types.push(ele.value);
+        });
+        console.log("New user= ", newUser);
+    }
 
-    listView.initAboutPage = () => {
-        // you get the idea
-    };
+    // listView.initListPage = () => {
+    //     // hide home and about, show lists
+    // };
+
+    // listView.initAboutPage = () => {
+    //     // you get the idea
+    // };
 
 
     module.listView = listView;
