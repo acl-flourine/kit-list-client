@@ -9,12 +9,9 @@ var app = app || {};
     listView.initHomePage = () => {
         $('main section').hide();
         $('#existing-user').parent().show();
-        // event listeners for #find and #submit-user - will listen for the click, call functions
-        $('#find').on('submit', listView.existingUser);
+        $('#find').on('click', listView.existingUser);
         $('#new-user').on('submit', listView.createUser); 
-};
-
-
+    };
 
     listView.createUser = event => {
         event.preventDefault();
@@ -36,12 +33,14 @@ var app = app || {};
 
     listView.existingUser = event => {
         event.preventDefault();
-        const newUser = {
-
-        }
+        const existingUserName = $('input[name="existing"]').val();
+        app.User.retrieve(existingUserName, (res) => {
+            console.log('response is: ', res[0].user_id);
+            page(`/kitlist/${res[0].user_id}`); //creates context object
+        });
     }
 
-    listView.initListPage = () => {
+    listView.initListPage = (ctx) => {
         $("main section").hide();
         $("#list-view").show();
         ctx.items.map(item => $('#list').append(item.toHtml()));

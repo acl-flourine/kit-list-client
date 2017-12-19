@@ -5,17 +5,18 @@ var app = app || {};
 (function(module) {
 
     function Item (obj) {
-        this.name = obj.name;
-        this.unit = obj.unit;
-        this.type = obj.type;
+        this.item = obj.item;
         this.amount = obj.amount;
+        this.added_on = obj.added_on || null;
     };
 
     Item.all = [];
 
     Item.fetchAll = (ctx, cb) => {
-        $.get(`${API_URL}/api/v1/kitlist/2`)
+        console.log(ctx.params.user_id);
+        $.get(`${API_URL}/api/v1/kitlist/${ctx.params.user_id}`)
         .then(data => {
+            console.log(data);
             Item.loadAll(data);
             ctx.items = Item.all;
         })
@@ -25,7 +26,7 @@ var app = app || {};
 
     Item.loadAll = (data) => {
         Item.all = data.map(obj => new Item (obj));
-        console.log(Item);
+        console.log(Item.all);
     }
 
 

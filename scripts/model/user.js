@@ -22,6 +22,15 @@ const API_URL = 'http://localhost:3000';
                 cb(data)
             })
     }
+
+    User.retrieve = (userName, cb) => {
+        $.get(`${API_URL}/api/v1/kitlist/users/${userName}`)
+            .catch(console.error)
+            .then( (data) => {
+                console.log(data)
+                cb(data)
+            })
+    }
       
 
 
