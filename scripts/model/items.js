@@ -14,19 +14,19 @@ var app = app || {};
     Item.all = [];
 
     Item.fetchAll = (ctx, cb) => {
-    $.get(`${API_URL}/api/v1/kitlist/:user_id`)
-    .then(data => {
-        Item.loadAll(data);
-        ctx.items = Item.all;
-    })
-    .then(cb)
-    .fail(console.error);
- };
+        $.get(`${API_URL}/api/v1/kitlist/:user_id`)
+        .then(data => {
+            Item.loadAll(data);
+            ctx.items = Item.all;
+        })
+        .then(cb)
+        .fail(console.error);
+    };
 
- Item.loadAll = (data) => {
-     Item.all = data.map(obj => new Item (obj));
-     console.log(Item);
- }
+    Item.loadAll = (data) => {
+        Item.all = data.map(obj => new Item (obj));
+        console.log(Item);
+    }
 
 
 //  Card.loadAll = (data) => {

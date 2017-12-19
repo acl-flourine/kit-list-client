@@ -29,12 +29,11 @@ var app = app || {};
             newUser.types.push(ele.value);
         });
         console.log("New user= ", newUser);
-        app.User.dbEntry(newUser);
+        app.User.create(newUser);
     }
 
     listView.existingUser = event => {
         event.preventDefault();
-        $.get(`${API_URL}/api/v1/kitlist/name`); // how do we get database info into object?
         const newUser = {
 
         }
