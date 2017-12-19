@@ -8,15 +8,30 @@ var app = app || {};
         this.name = obj.name;
         this.unit = obj.unit;
         this.type = obj.type;
-        this.amount = obj.amount
+        this.amount = obj.amount;
     };
 
     Item.all = [];
 
-    Item.fetchAll = () => {
-        // get
-    };
+    Item.fetchAll = (ctx, cb) => {
+    $.get(`${API_URL}/api/v1/kitlist/:user_id`)
+    .then(data => {
+        Item.loadAll(data);
+        ctx.items = Item.all;
+    })
+    .then(cb)
+    .fail(console.error);
+ };
 
+ Item.loadAll = (data) => {
+     Item.all = data.map(obj => new Item (obj));
+     console.log(Item);
+ }
+
+
+//  Card.loadAll = (data) => {
+//     Card.all = data.map(obj => new Card(obj));
+// }
     //Item.prototype.toHtml = () {
         /* 
         

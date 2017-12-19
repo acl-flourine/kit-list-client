@@ -10,11 +10,11 @@ var app = app || {};
         $('main section').hide();
         $('#existing-user').parent().show();
         // event listeners for #find and #submit-user - will listen for the click, call functions
-        $('#find').on('submit', function (ctx) {
-        // get user from join table via user ID, populate list view with that user's items
-        });
+        $('#find').on('submit', listView.existingUser);
         $('#new-user').on('submit', listView.createUser); 
 };
+
+
 
     listView.createUser = event => {
         event.preventDefault();
@@ -32,9 +32,19 @@ var app = app || {};
         app.User.dbEntry(newUser);
     }
 
-    // listView.initListPage = () => {
-    //     // hide home and about, show lists
-    // };
+    listView.existingUser = event => {
+        event.preventDefault();
+        $.get(`${API_URL}/api/v1/kitlist/name`); // how do we get database info into object?
+        const newUser = {
+
+        }
+    }
+
+    listView.initListPage = () => {
+        $("main section").hide();
+        $("#list-view").show();
+        ctx.items.map(item => $('#list').append(item.toHtml()));
+    };
 
     // listView.initAboutPage = () => {
     //     // you get the idea
