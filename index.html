@@ -9,9 +9,16 @@
     <link rel="stylesheet" href="styles/layout.css">
     <link rel="stylesheet" href="styles/modules.css">
     <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville:400,700|Source+Sans+Pro:400,400i,700,700i" rel="stylesheet">        
+    
     <script id="list-template" type="text/x-handlebars-template">
         <li>{{name}} {{amount}}</li>
-    </script>    
+    </script>  
+    
+    <script id="weather-template" type="text/x-handlebars-template">
+        <h4>{{location}}</h4>
+        <p>{{temperature}}</p>
+        <p>{{weather}}</p>
+    </script>  
 </head>
 <body>
     
@@ -21,6 +28,8 @@
             <ul>
                 <li><a href="/home">home</a></li>
                 <li><a href="/about" >about</a></li>
+                <li><a href="/news">news</a></li></li>
+
             </ul>
         </nav>
     </section>    
@@ -48,6 +57,12 @@
                     <button type="submit" id="submit-user">Submit</button>
                 </fieldset>
             </form>
+            <div id="weather-view">
+                    <h1>Current Forecast</h1>
+                    <h4>Location</h4>
+                    <p>temperature: 48.0 F (8.9 C)</p>
+                    <p>weather: Rain</p>
+            </div>
         </section>
         <section>
             <div>****************** Test Section **************</div>
@@ -60,13 +75,15 @@
         </section>
 
     </main>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.js"></script>
     <script src="https://cdn.rawgit.com/visionmedia/page.js/master/page.js"></script>
     
-    <script src="scripts/model/User.js"></script>
+    <script src="scripts/model/user.js"></script>
     <script src="scripts/model/items.js"></script>
-    <script src="scripts/view/listView.js"></script>    
+    <script src="scripts/model/weather.js"></script>
+    <script src="scripts/view/listView.js"></script> 
     <!-- <script src="scripts/view/aboutView.js"></script> -->
     <script src="routes.js"></script>
 

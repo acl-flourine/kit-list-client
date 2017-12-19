@@ -65,8 +65,8 @@ button {
 
 button#find {
     background-color: #e8f5f7;
-    &:hover, &:focus: {
-        background:
+    /* &:hover, &:focus: {
+        background: */
 }
 
 button#submit-user {
