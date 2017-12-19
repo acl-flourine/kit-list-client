@@ -43,6 +43,8 @@ var app = app || {};
     listView.initListPage = (ctx) => {
         $("main section").hide();
         $("#list-view").show();
+        console.log(ctx.items);
+        console.log(ctx);
         ctx.items.map(item => $('#list').append(item.toHtml()));
     };
 

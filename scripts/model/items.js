@@ -29,20 +29,10 @@ var app = app || {};
         console.log(Item.all);
     }
 
-
-//  Card.loadAll = (data) => {
-//     Card.all = data.map(obj => new Card(obj));
-// }
-    //Item.prototype.toHtml = () {
-        /* 
-        
-        array of items specific to user, forEach
-        will fill template with items
-        per day items will be amount * this.household 8 this.days
-        per person items amount * this.household
-        per house, just the item
-        */ 
-    //}
+    Item.prototype.toHtml = function(){
+        let fillTemplate = Handlebars.compile($('#list-template').text());
+        return fillTemplate(this);
+    }
 
     module.Item = Item;
 
