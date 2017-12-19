@@ -15,13 +15,12 @@
 </head>
 <body>
     
-    <section id="nav">
-        <nav>
+    <section>
+        <nav id="main-nav">
+            <img src="/images/kit-list.png" id="logo">
             <ul>
                 <li><a href="/home">home</a></li>
-                <!-- <li><a href="/">list</a></li> -->
                 <li><a href="/about" >about</a></li>
-                <!-- <li><a href="/map">map</a></li> -->
             </ul>
         </nav>
     </section>    
@@ -30,7 +29,7 @@
         <section id="home-view">
             <div id="existing-user">
                 <label>Already a user?<input type="text" placeholder="User Name" name="existing"></label>
-                <button type="submit" id="find">Get my Kit List</button>
+                <button type="submit" id="find">Get My Kit List</button>
             </div>
             
             <form id="new-user">
@@ -39,7 +38,7 @@
                     <label>How many people are in your household?<input type="text" name="household"></label>
                     <label>How many days would you like to prepare for?<input type="text" name="days"></label>
                     <label>Check all that apply:
-                            <input type="checkbox" name="types" value="meds">Required medication                          
+                            <input type="checkbox" name="types" value="meds">Require medication                          
                             <input type="checkbox" name="types" value="infant">Infant(s) in home
                             <input type="checkbox" name="types" value="child">Small child(ren) in home
                             <input type="checkbox" name="types" value="pets">Pet(s) in home
