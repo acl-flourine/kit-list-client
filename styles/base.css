@@ -1,0 +1,98 @@
+body {
+    margin: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Source Sans Pro', sans-serif;    
+}
+
+body {
+    font-family: 'Source Sans Pro', sans-serif;
+    line-height: 1.45em;
+    color: #383838;
+    margin: 0;
+}
+
+nav {
+    background: #e8f5f7;
+    padding: 2.5% 7.5%;
+}
+
+#main-nav {
+    background: #ffffff;
+}
+
+nav ul {
+    font-family: 'Source Sans Pro', sans-serif;   
+    font-weight: bold;
+    padding-bottom: 5%;  
+    display: inline;
+}
+
+nav ul li {
+    float: right;
+    padding-left: 5%;
+    text-transform: uppercase;
+    letter-spacing: 1px;    
+}
+
+nav ul li a {
+    text-decoration: none;
+}
+
+#logo {
+    vertical-align: middle;
+    width: 35%;
+    margin-right: 20px;
+    margin-top: 15px;
+}
+
+#existing-user {
+    background-color: #ef4a3e;
+    padding: 3.5% 7.5%;
+}
+
+button {
+    border-radius: 20px;
+    border-style: none;
+    border-width: 1px;
+    padding: 10px 15px 10px;
+    font-family: 'Source Sans Pro', sans-serif; 
+    font-size: 1em;  
+    font-weight: bold;
+    color: #383838;
+}
+
+button#find {
+    background-color: #e8f5f7;
+    &:hover, &:focus: {
+        background:
+}
+
+button#submit-user {
+    background-color: #8FB996;
+}
+
+#new-user {
+    /* margin-top: 5%; */
+}
+
+fieldset {
+    padding: 5% 7.5%;
+    background-color: #e8f5f7;
+    border: none;
+}
+
+label {
+    text-align: right;
+    clear: both;
+    float:left;
+    margin-right:15px;
+    font-size: 1.3em;
+    line-height: 2em;
+}
+
+input {
+}
+
+
