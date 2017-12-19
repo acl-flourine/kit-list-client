@@ -16,6 +16,8 @@ var app = app || {};
         $('#new-user').on('submit', listView.createUser); 
 };
 
+
+
     listView.createUser = event => {
         event.preventDefault();
         const newUser = {
@@ -32,9 +34,16 @@ var app = app || {};
         app.User.dbEntry(newUser);
     }
 
-    // listView.initListPage = () => {
-    //     // hide home and about, show lists
-    // };
+    // listView.createItem = event => {
+    //     event.preventDefault();
+    //     const newItem = {
+    //         listType: 
+    //     }
+    // }
+
+     listView.initListPage = () => {
+          console.log('shit needs to show');// hide home and about, show lists
+    };
 
     // listView.initAboutPage = () => {
     //     // you get the idea

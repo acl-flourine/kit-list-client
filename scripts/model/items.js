@@ -13,10 +13,25 @@ var app = app || {};
 
     Item.all = [];
 
-    Item.fetchAll = () => {
-        // get
-    };
+    Item.fetchAll = (ctx, cb) => {
+    $.get(`${API_URL}/api/v1/kitlist`)
+    .then(data => {
+        Item.loadAll(data);
+        ctx.items = Item.all;
+    })
+    .then(cb)
+    .fail(console.error);
+ };
 
+ Item.loadAll = (data) => {
+     Item.all = data.map(obj => new Item (obj));
+     console.log(item, Item);
+ }
+
+
+//  Card.loadAll = (data) => {
+//     Card.all = data.map(obj => new Card(obj));
+// }
     //Item.prototype.toHtml = () {
         /* 
         
