@@ -1,0 +1,38 @@
+body {
+    margin: 0;
+}
+
+nav {
+    background: #E3E3E3;
+    padding: 2.5% 7.5%;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Source Sans Pro', sans-serif;    
+}
+
+body {
+    font-family: 'Source Sans Pro', sans-serif;
+    line-height: 1.45em;
+    color: #383838;
+    margin: 0;
+}
+
+nav ul {
+    list-style: none;     
+    font-family: 'Source Sans Pro', sans-serif;   
+    font-weight: bold;
+    padding-bottom: 5%;  
+}
+
+nav ul li {
+    display: inline;
+    float: right;
+    padding-left: 5%;
+}
+
+nav ul li a {
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;    
+}
