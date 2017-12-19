@@ -14,7 +14,7 @@ var app = app || {};
     Item.all = [];
 
     Item.fetchAll = (ctx, cb) => {
-        $.get(`${API_URL}/api/v1/kitlist/:user_id`)
+        $.get(`${API_URL}/api/v1/kitlist/2`)
         .then(data => {
             Item.loadAll(data);
             ctx.items = Item.all;

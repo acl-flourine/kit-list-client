@@ -29,7 +29,9 @@ var app = app || {};
             newUser.types.push(ele.value);
         });
         console.log("New user= ", newUser);
-        app.User.create(newUser);
+        app.User.create(newUser, (id) => {
+            page(`/kitlist/${id}`); //creates context object
+        });
     }
 
     listView.existingUser = event => {

@@ -14,9 +14,13 @@ const API_URL = 'http://localhost:3000';
     };
 
     
-    User.create = user => {
+    User.create = (user, cb) => {
         $.post(`${API_URL}/api/v1/kitlist`, user)
-            .catch(console.error);
+            .catch(console.error)
+            .then( (data) => {
+                console.log(data)
+                cb(data)
+            })
     }
       
 
