@@ -52,8 +52,10 @@ var app = app || {};
     //     // you get the idea
     // };
 
-
+    app.Weather.populateWeather();
+    
     module.listView = listView;
+
 })(app);
 
 console.log(app);
