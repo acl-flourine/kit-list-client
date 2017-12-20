@@ -27,6 +27,7 @@ nav ul {
     font-weight: bold;
     padding-bottom: 5%;  
     display: inline;
+    list-style-type: none;
 }
 
 nav ul li {
@@ -90,6 +91,10 @@ label {
     margin-right:15px;
     font-size: 1.3em;
     line-height: 2em;
+}
+
+#weather-view {
+    padding: 2.5% 7.5%;
 }
 
 input {
