@@ -15,8 +15,8 @@ let userWeather = {};
     }
 
 
-    Weather.getUserWeather = (res) => {
-        $.get(`${API_URL}/api/v1/weather`)
+    Weather.getUserWeather = (id) => {
+        $.get(`${API_URL}/api/v1/weather`, {id: id})
         .catch(console.error)
         .then( res => {
             console.log('weather: ', res); // temp undefined, unable to capture resp.body info from server side
