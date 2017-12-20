@@ -7,6 +7,7 @@ var app = app || {};
     function Item (obj) {
         this.item = obj.item;
         this.amount = obj.amount;
+        this.category = obj.category;
         this.added_on = obj.added_on || null;
     };
 
