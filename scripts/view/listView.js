@@ -3,14 +3,15 @@
 var app = app || {};
 
 (function (module) {
-
+    
     const listView = {};
-
+    
     listView.initHomePage = () => {
         $('main section').hide();
         $('#existing-user').parent().show();
         $('#find').on('click', listView.existingUser);
         $('#new-user').on('submit', listView.createUser); 
+        $("#about-link").on('click', listView.initAboutPage);
     };
 
     listView.createUser = event => {
@@ -20,9 +21,10 @@ var app = app || {};
             household: $('#new-user input[name="household"]').val(),
             days: $('#new-user input[name="days"]').val(),
             types: [],
+            userState: $('#new-user input[name="userState"]').val(),
+            userCity: $('#new-user input[name="userCity"]').val(),
         }
         $("input:checked").each((i, ele) => {
-            console.log(ele);
             newUser.types.push(ele.value);
         });
         console.log("New user= ", newUser);
@@ -35,7 +37,6 @@ var app = app || {};
         event.preventDefault();
         const existingUserName = $('input[name="existing"]').val();
         app.User.retrieve(existingUserName, (res) => {
-            console.log('response is: ', res[0].user_id);
             page(`/kitlist/${res[0].user_id}`); //creates context object
         });
     }
@@ -43,16 +44,17 @@ var app = app || {};
     listView.initListPage = (ctx) => {
         $("main section").hide();
         $("#list-view").show();
-        console.log(ctx.items);
-        console.log(ctx);
+        app.Weather.getUserWeather();
+        app.Weather.populateWeather();
         ctx.items.map(item => $('#list').append(item.toHtml()));
     };
 
-    // listView.initAboutPage = () => {
-    //     // you get the idea
-    // };
+    listView.initAboutPage = event => {
+        event.preventDefault();
+        $("main section").hide();
+        $("#about-view").show();
+     };
 
-    app.Weather.populateWeather();
     
     module.listView = listView;
 
