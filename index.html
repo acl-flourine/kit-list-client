@@ -11,14 +11,14 @@
     <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville:400,700|Source+Sans+Pro:400,400i,700,700i" rel="stylesheet">        
     
     <script id="list-template" type="text/x-handlebars-template">
-        <li>{{item}} {{amount}}</li>
+        <li>{{amount}} {{item}} {{category}}</li>
     </script>   
     
     <script id="weather-template" type="text/x-handlebars-template">
-        <h4>{{location}}</h4>
-        <p>{{temperature}}</p>
-        <p>{{wind}}</p>
-        <p>{{conditions}}</p>
+        <h4>Location: {{location}}</h4>
+        <p>Temperature: {{temperature}} &deg;F</p>
+        <p>Wind: {{wind}}</p>
+        <p>Conditions: {{conditions}}</p>
     </script>  
 </head>
 <body>
@@ -28,7 +28,7 @@
             <img src="/images/kit-list.png" id="logo">
             <ul>
                 <li><a href="/home">home</a></li>
-                <li><a href="/about" >about</a></li>
+                <li><a id="about-link" href="/about" >about</a></li>
             </ul>
         </nav>
     </section>    
@@ -36,38 +36,47 @@
     <main id="everything">
         <section id="home-view">
             <div id="existing-user">
-                <label>Already a user?<input type="text" placeholder="User Name" name="existing"></label>
+                <label>Already a user?<input type="text" placeholder="Enter User Name" name="existing"></label>
                 <button id="find">Get My Kit List</button>
             </div>
-            
-            <form id="new-user">
-                <fieldset>
-                    <label>User Name<input type="text" name="user-name"></label>
-                    <label>How many people are in your household?<input type="text" name="household"></label>
-                    <label>How many days would you like to prepare for?<input type="text" name="days"></label>
-                    <label>Check all that apply:
-                            <input type="checkbox" name="types" value="meds">Require medication                          
-                            <input type="checkbox" name="types" value="infant">Infant(s) in home
-                            <input type="checkbox" name="types" value="child">Small child(ren) in home
-                            <input type="checkbox" name="types" value="pets">Pet(s) in home
-                            <input type="checkbox" name="types" value="heat">Extreme heat in region
-                            <input type="checkbox" name="types" value="cold">Extreme cold in region
-                    </label>
-                    <label>Current state<input type="text" name="userState"></label>
-                    <label>Current city<input type="text" name="userCity"></label>
-                    <button type="submit" id="submit-user">Submit</button>
-                </fieldset>
-            </form>
-        </section>
+            <!-- <div id="form-container"> -->
+                <form id="new-user">
+                    <!-- <ul class="flex-outer"> -->
+                        <fieldset>
+                            <label>User Name<input type="text" name="user-name"></label>
+                            <label>How many people are in your household?<input type="text" name="household"></label>
+                            <label>How many days would you like to prepare for?<input type="text" name="days"></label>
+                            <label id="checkbox-list">Check all that apply:
+                                    <input type="checkbox" name="types" value="meds">Require medication                          
+                                    <input type="checkbox" name="types" value="infant">Infant(s) in home
+                                    <input type="checkbox" name="types" value="child">Small child(ren) in home
+                                    <input type="checkbox" name="types" value="pets">Pet(s) in home
+                                    <input type="checkbox" name="types" value="heat">Extreme heat in region
+                                    <input type="checkbox" name="types" value="cold">Extreme cold in region
+                            </label>
+                            <label>Current City<input type="text" name="userCity"></label>
+                            <label>Current State<input type="text" placeholder="Two-Letter Abbreviation" maxlength="2" name="userState"></label>
+                            <button type="submit" id="submit-user">Submit</button>
+                        </fieldset>
+                    <!-- </ul> -->
+                </form>
+            <!-- </div> -->
+            </section>
+
         <section id="list-view">
             <ul id="list"></ul>
             <div id="weather-view">
+                <h1>Live Weather</h1>
+            </div>
+            <div id="assistive">
+                <p class="note">Pack assistive devices as needed for all members of your household.</p>
             </div>
         </section>
 
-        <section id="about-view">        
+        <section id="about-view">   
+            <h1>About the Project</h1>
+            <p>Kit List is an emergency preparedness checklist based on specific user needs.</p>
         </section>
-
     </main>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>

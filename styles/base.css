@@ -1,4 +1,7 @@
 body {
+    font-family: 'Source Sans Pro', sans-serif;
+    line-height: 1.45em;
+    color: #383838;
     margin: 0;
 }
 
@@ -6,11 +9,8 @@ h1, h2, h3, h4, h5, h6 {
     font-family: 'Source Sans Pro', sans-serif;    
 }
 
-body {
-    font-family: 'Source Sans Pro', sans-serif;
-    line-height: 1.45em;
-    color: #383838;
-    margin: 0;
+.note {
+    font-style: italic;
 }
 
 nav {
@@ -39,6 +39,38 @@ nav ul li {
 
 nav ul li a {
     text-decoration: none;
+    color: #383838;
+}
+
+nav a:hover, a:focus, a:active {
+    color: #ef4a3e;
+    text-decoration: none;
+}
+
+nav a {
+    position: relative;
+    display: block;
+    padding: 16px 0;
+    margin: 0 12px;
+    transition: color 0.1s,background-color 0.1s,padding 0.2s ease-in;
+    color: #ef4a3e;
+}
+
+a::before {
+    content: '';
+    position: absolute;
+    bottom: 3px;
+    height: 3px;
+    width: 100%;
+    background-color: #ef4a3e;
+    transform-origin: right top;
+    transform: scale(0, 1);
+    transition: color 0.1s,transform 0.2s ease-out;
+}
+
+a:hover::before, a:focus::before {
+    transform-origin: left top;
+    transform: scale(1, 1);
 }
 
 #logo {
@@ -51,13 +83,25 @@ nav ul li a {
 #existing-user {
     background-color: #ef4a3e;
     padding: 3.5% 7.5%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: flex-start;
+}
+
+#existing-user  {
+    font-weight: bold;
+}
+
+#existing-user  input{
+    margin: 0 40px 0 20px;
 }
 
 button {
-    border-radius: 20px;
+    border-radius: 25px;
     border-style: none;
     border-width: 1px;
-    padding: 10px 15px 10px;
+    padding: 7.5px 20px;
+    height: 40px;
     font-family: 'Source Sans Pro', sans-serif; 
     font-size: 1em;  
     font-weight: bold;
@@ -66,17 +110,27 @@ button {
 
 button#find {
     background-color: #e8f5f7;
+    display: inline;
     /* &:hover, &:focus: {
         background: */
 }
 
-button#submit-user {
-    background-color: #8FB996;
+button#find:hover{
+    background-color: #F69C95;
 }
 
-#new-user {
-    /* margin-top: 5%; */
+button#submit-user {
+    background-color: #59C9A5;
+    display: block;
+    clear: left;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
+
+button#submit-user:hover{
+    background-color: #86D7BD;
+}
+
 
 fieldset {
     padding: 5% 7.5%;
@@ -85,12 +139,12 @@ fieldset {
 }
 
 label {
-    text-align: right;
+    /* text-align: right; */
     clear: both;
     float:left;
-    margin-right:15px;
     font-size: 1.3em;
     line-height: 2em;
+    padding: 5px 0;
 }
 
 #weather-view {
@@ -98,6 +152,15 @@ label {
 }
 
 input {
+    margin-left: 10px;
+    padding: 10px 10px;
 }
 
+#existing-user input {
+    border: none;
+}
 
+#checkbox-list {
+    display: block;
+    float: left;
+}
