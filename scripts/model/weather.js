@@ -19,6 +19,14 @@ const weatherObject = {
         this.weather = obj.weather;
     }
 
+    Weather.getUserWeather = () => {
+        $.get(`${API_URL}/api/v1/weather`)
+        .catch(console.error)
+        .then( temp => {
+            console.log('weather: ', temp); // temp undefined, unable to capture resp.body info from server side
+        })
+    }
+
     Weather.prototype.toHtml = function() {
         const weatherTemplate = $(`#weather-template`).html();
         const templateFiller = Handlebars.compile(weatherTemplate);
@@ -34,5 +42,3 @@ const weatherObject = {
     module.Weather = Weather;
 
 })(app);
-
-// where to call app.Weather.populateWeather();

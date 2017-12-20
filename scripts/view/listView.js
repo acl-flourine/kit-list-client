@@ -43,6 +43,8 @@ var app = app || {};
     listView.initListPage = (ctx) => {
         $("main section").hide();
         $("#list-view").show();
+        app.Weather.getUserWeather();
+        app.Weather.populateWeather();
         ctx.items.map(item => $('#list').append(item.toHtml()));
     };
 
@@ -50,7 +52,6 @@ var app = app || {};
     //     // you get the idea
     // };
 
-    app.Weather.populateWeather();
     
     module.listView = listView;
 
