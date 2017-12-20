@@ -25,6 +25,7 @@ var app = app || {};
     };
 
     Item.loadAll = (data) => {
+        console.log('****** load all data content: ', data)
         Item.all = data.map(obj => new Item (obj));
     }
 
