@@ -35,6 +35,4 @@ const weatherObject = {
 
 })(app);
 
-console.log(app);
-
 // where to call app.Weather.populateWeather();

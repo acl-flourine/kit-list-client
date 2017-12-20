@@ -20,9 +20,10 @@ var app = app || {};
             household: $('#new-user input[name="household"]').val(),
             days: $('#new-user input[name="days"]').val(),
             types: [],
+            userState: $('#new-user input[name="userState"]').val(),
+            userCity: $('#new-user input[name="userCity"]').val(),
         }
         $("input:checked").each((i, ele) => {
-            console.log(ele);
             newUser.types.push(ele.value);
         });
         console.log("New user= ", newUser);
@@ -35,7 +36,6 @@ var app = app || {};
         event.preventDefault();
         const existingUserName = $('input[name="existing"]').val();
         app.User.retrieve(existingUserName, (res) => {
-            console.log('response is: ', res[0].user_id);
             page(`/kitlist/${res[0].user_id}`); //creates context object
         });
     }
@@ -43,8 +43,6 @@ var app = app || {};
     listView.initListPage = (ctx) => {
         $("main section").hide();
         $("#list-view").show();
-        console.log(ctx.items);
-        console.log(ctx);
         ctx.items.map(item => $('#list').append(item.toHtml()));
     };
 

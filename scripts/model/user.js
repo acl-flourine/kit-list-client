@@ -18,7 +18,6 @@ const API_URL = 'http://localhost:3000';
         $.post(`${API_URL}/api/v1/kitlist`, user)
             .catch(console.error)
             .then( (data) => {
-                console.log(data)
                 cb(data)
             })
     }
@@ -27,7 +26,6 @@ const API_URL = 'http://localhost:3000';
         $.get(`${API_URL}/api/v1/kitlist/users/${userName}`)
             .catch(console.error)
             .then( (data) => {
-                console.log(data)
                 cb(data)
             })
     }
@@ -37,5 +35,3 @@ const API_URL = 'http://localhost:3000';
     module.User = User;
     
 })(app);
-
-console.log(app);
