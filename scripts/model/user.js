@@ -10,7 +10,7 @@ const API_URL = 'http://localhost:3000';
         this.name = obj.name,
         this.household = obj.household,
         this.days = obj.days,
-        this.types = [base]
+        this.types = ['base']
     };
 
     
@@ -18,7 +18,7 @@ const API_URL = 'http://localhost:3000';
         $.post(`${API_URL}/api/v1/kitlist`, user)
             .catch(console.error)
             .then( (data) => {
-                console.log(data)
+                console.log('Data from User.create: ', data) //returns user id
                 cb(data)
             })
     }
@@ -27,7 +27,7 @@ const API_URL = 'http://localhost:3000';
         $.get(`${API_URL}/api/v1/kitlist/users/${userName}`)
             .catch(console.error)
             .then( (data) => {
-                console.log(data)
+                console.log('Data from User.retrieve: ',data)
                 cb(data)
             })
     }

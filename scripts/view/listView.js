@@ -19,13 +19,13 @@ var app = app || {};
             name: $('#new-user input[name="user-name"]').val(),
             household: $('#new-user input[name="household"]').val(),
             days: $('#new-user input[name="days"]').val(),
-            types: [],
+            types: ['base'],
         }
         $("input:checked").each((i, ele) => {
             console.log(ele);
             newUser.types.push(ele.value);
         });
-        console.log("New user= ", newUser);
+        console.log("New user = ", newUser);
         app.User.create(newUser, (id) => {
             page(`/kitlist/${id}`); //creates context object
         });
@@ -43,8 +43,6 @@ var app = app || {};
     listView.initListPage = (ctx) => {
         $("main section").hide();
         $("#list-view").show();
-        console.log(ctx.items);
-        console.log(ctx);
         ctx.items.map(item => $('#list').append(item.toHtml()));
     };
 
@@ -52,10 +50,8 @@ var app = app || {};
     //     // you get the idea
     // };
 
-    app.Weather.populateWeather();
-    
-    module.listView = listView;
 
+    module.listView = listView;
 })(app);
 
 console.log(app);
