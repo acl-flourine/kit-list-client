@@ -3,41 +3,41 @@
 var app = app || {};
 
 const weather = [];
-
-const weatherObject = {
-    location: "Portland",
-    temperature: "50",
-    weather: "rain"
-};
-
+let userWeather = {};
 
 (function(module) {
 
     function Weather (obj) {
         this.location = obj.location;
         this.temperature = obj.temperature;
-        this.weather = obj.weather;
+        this.wind = obj.wind;
+        this.conditions = obj.conditions;
     }
 
-    Weather.getUserWeather = () => {
-        $.get(`${API_URL}/api/v1/weather`)
+
+    Weather.getUserWeather = (id) => {
+        $.get(`${API_URL}/api/v1/weather`, {id: id})
         .catch(console.error)
-        .then( temp => {
-            console.log('weather: ', temp); // temp undefined, unable to capture resp.body info from server side
+        .then( res => {
+            console.log('weather: ', res); // temp undefined, unable to capture resp.body info from server side
+            userWeather = {
+                location: res[0],
+                temperature: res[1],
+                wind: res[2],
+                conditions: res[3]
+            }
+            const olympia = new Weather(userWeather);
+            $('#weather-view').append(olympia.toHtml());
         })
     }
+console.log(userWeather);
 
     Weather.prototype.toHtml = function() {
         const weatherTemplate = $(`#weather-template`).html();
         const templateFiller = Handlebars.compile(weatherTemplate);
         const filledTemplate = templateFiller(this);
         return filledTemplate;
-    }
-
-    Weather.populateWeather = () => {
-            const LA = new Weather(weatherObject);
-            $('#weather-view').append(LA.toHtml());
-        }    
+    }  
 
     module.Weather = Weather;
 

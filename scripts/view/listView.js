@@ -37,6 +37,7 @@ var app = app || {};
         event.preventDefault();
         const existingUserName = $('input[name="existing"]').val();
         app.User.retrieve(existingUserName, (res) => {
+            console.log(res);
             page(`/kitlist/${res[0].user_id}`); //creates context object
         });
     }
@@ -44,8 +45,7 @@ var app = app || {};
     listView.initListPage = (ctx) => {
         $("main section").hide();
         $("#list-view").show();
-        app.Weather.getUserWeather();
-        app.Weather.populateWeather();
+        app.Weather.getUserWeather(ctx.params.user_id);
         ctx.items.map(item => $('#list').append(item.toHtml()));
     };
 
