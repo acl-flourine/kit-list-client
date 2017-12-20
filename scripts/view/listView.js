@@ -9,6 +9,7 @@ var app = app || {};
     listView.initHomePage = () => {
         $('main section').hide();
         $('#existing-user').parent().show();
+        $('ul#list-test').hide();
         $('#find').on('click', listView.existingUser);
         $('#new-user').on('submit', listView.createUser); 
         $("#about-link").on('click', listView.initAboutPage);
