@@ -39,6 +39,15 @@ nav ul li {
 
 nav ul li a {
     text-decoration: none;
+    color: #383838;
+}
+
+nav ul li a:hover {
+    color: #ef4a3e;
+}
+
+nav ul li a:active {
+    color: #ef4a3e;
 }
 
 #logo {
@@ -51,13 +60,25 @@ nav ul li a {
 #existing-user {
     background-color: #ef4a3e;
     padding: 3.5% 7.5%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: flex-start;
+}
+
+#existing-user  {
+    font-weight: bold;
+}
+
+#existing-user  input{
+    margin: 0 40px 0 20px;
 }
 
 button {
-    border-radius: 20px;
+    border-radius: 25px;
     border-style: none;
     border-width: 1px;
-    padding: 10px 15px 10px;
+    padding: 7.5px 20px;
+    height: 40px;
     font-family: 'Source Sans Pro', sans-serif; 
     font-size: 1em;  
     font-weight: bold;
@@ -66,12 +87,21 @@ button {
 
 button#find {
     background-color: #e8f5f7;
+    display: inline;
     /* &:hover, &:focus: {
         background: */
 }
 
+button#find:hover{
+    background-color: #ef4a3e;
+}
+
 button#submit-user {
     background-color: #8FB996;
+    display: block;
+    clear: left;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 #new-user {
@@ -85,12 +115,12 @@ fieldset {
 }
 
 label {
-    text-align: right;
+    /* text-align: right; */
     clear: both;
     float:left;
-    margin-right:15px;
     font-size: 1.3em;
     line-height: 2em;
+    padding: 5px 0;
 }
 
 #weather-view {
@@ -98,6 +128,18 @@ label {
 }
 
 input {
+    margin-left: 10px;
+    padding: 10px 10px;
+    border: none;
 }
 
+#checkbox-list {
+    display: block;
+    float: left;
+    margin-bottom: 15px;
+}
 
+input[type="radio"] + .side-label::before,
+input[type="radio"] + .side-label::after {
+  border-radius: 50%;
+}

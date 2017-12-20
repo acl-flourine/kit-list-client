@@ -18,6 +18,7 @@
         <h4>{{location}}</h4>
         <p>{{temperature}}</p>
         <p>{{weather}}</p>
+        <p>{{image}}</p>
     </script>  
 </head>
 <body>
@@ -44,7 +45,7 @@
                     <label>User Name<input type="text" name="user-name"></label>
                     <label>How many people are in your household?<input type="text" name="household"></label>
                     <label>How many days would you like to prepare for?<input type="text" name="days"></label>
-                    <label>Check all that apply:
+                    <label id="checkbox-list">Check all that apply:
                             <input type="checkbox" name="types" value="meds">Require medication                          
                             <input type="checkbox" name="types" value="infant">Infant(s) in home
                             <input type="checkbox" name="types" value="child">Small child(ren) in home
@@ -56,6 +57,7 @@
                 </fieldset>
             </form>
             <div id="weather-view">
+            <h1>Live Weather</h1>
             </div>
         </section>
         <section id="list-view">
