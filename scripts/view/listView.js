@@ -45,8 +45,8 @@ var app = app || {};
     listView.initListPage = (ctx) => {
         $("main section").hide();
         $("#list-view").show();
-        app.Weather.getUserWeather(ctx.params.user_id);
         ctx.items.map(item => $('#list').append(item.toHtml()));
+        app.Weather.getUserWeather(ctx.params.user_id);
     };
 
     listView.initAboutPage = event => {
