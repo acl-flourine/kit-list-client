@@ -111,8 +111,6 @@ button {
 button#find {
     background-color: #e8f5f7;
     display: inline;
-    /* &:hover, &:focus: {
-        background: */
 }
 
 button#find:hover{
@@ -139,7 +137,6 @@ fieldset {
 }
 
 label {
-    /* text-align: right; */
     clear: both;
     float:left;
     font-size: 1.3em;
@@ -149,6 +146,21 @@ label {
 
 #weather-view {
     padding: 2.5% 7.5%;
+}
+
+#list-test {
+    padding: 2.5% 7.5%;
+    background-color: #e8f5f7;
+}
+
+#list-view {
+    padding: 2.5% 7.5%;
+    background-color: #e8f5f7;
+}
+
+#about-view {
+    padding: 2.5% 7.5%;
+    background-color: #e8f5f7;
 }
 
 input {
