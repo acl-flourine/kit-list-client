@@ -44,7 +44,7 @@ var app = app || {};
         $("main section").hide();
         $("#list-view").show();
         app.Weather.getUserWeather();
-        app.Weather.populateWeather();
+       // app.Weather.populateWeather();
         ctx.items.map(item => $('#list').append(item.toHtml()));
     };
 
