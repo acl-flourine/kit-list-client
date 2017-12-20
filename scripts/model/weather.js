@@ -27,7 +27,7 @@ let userWeather = {};
                 conditions: res[3]
             }
             const olympia = new Weather(userWeather);
-            $('#weather-view').empty();
+            $('#weather-view').children().empty();
             $('#weather-view').append(olympia.toHtml());
         })
     }
