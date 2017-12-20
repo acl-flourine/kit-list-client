@@ -9,6 +9,10 @@ h1, h2, h3, h4, h5, h6 {
     font-family: 'Source Sans Pro', sans-serif;    
 }
 
+.note {
+    font-style: italic;
+}
+
 nav {
     background: #e8f5f7;
     padding: 2.5% 7.5%;
@@ -159,5 +163,4 @@ input {
 #checkbox-list {
     display: block;
     float: left;
-    margin-bottom: 15px;
 }
