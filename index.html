@@ -11,8 +11,8 @@
     <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville:400,700|Source+Sans+Pro:400,400i,700,700i" rel="stylesheet">        
     
     <script id="list-template" type="text/x-handlebars-template">
-        <li>{{name}} {{amount}}</li>
-    </script>  
+        <li>{{item}} {{amount}}</li>
+    </script>   
     
     <script id="weather-template" type="text/x-handlebars-template">
         <h4>{{location}}</h4>
@@ -36,7 +36,7 @@
         <section id="home-view">
             <div id="existing-user">
                 <label>Already a user?<input type="text" placeholder="User Name" name="existing"></label>
-                <button type="submit" id="find">Get My Kit List</button>
+                <button id="find">Get My Kit List</button>
             </div>
             
             <form id="new-user">
@@ -50,7 +50,7 @@
                             <input type="checkbox" name="types" value="child">Small child(ren) in home
                             <input type="checkbox" name="types" value="pets">Pet(s) in home
                             <input type="checkbox" name="types" value="heat">Extreme heat in region
-                            <input type="checkbox" name="types" value="snow">Extreme cold in region
+                            <input type="checkbox" name="types" value="cold">Extreme cold in region
                     </label>
                     <button type="submit" id="submit-user">Submit</button>
                 </fieldset>

@@ -9,12 +9,9 @@ var app = app || {};
     listView.initHomePage = () => {
         $('main section').hide();
         $('#existing-user').parent().show();
-        // event listeners for #find and #submit-user - will listen for the click, call functions
-        $('#find').on('submit', listView.existingUser);
+        $('#find').on('click', listView.existingUser);
         $('#new-user').on('submit', listView.createUser); 
-};
-
-
+    };
 
     listView.createUser = event => {
         event.preventDefault();
@@ -29,20 +26,25 @@ var app = app || {};
             newUser.types.push(ele.value);
         });
         console.log("New user= ", newUser);
-        app.User.dbEntry(newUser);
+        app.User.create(newUser, (id) => {
+            page(`/kitlist/${id}`); //creates context object
+        });
     }
 
     listView.existingUser = event => {
         event.preventDefault();
-        $.get(`${API_URL}/api/v1/kitlist/name`); // how do we get database info into object?
-        const newUser = {
-
-        }
+        const existingUserName = $('input[name="existing"]').val();
+        app.User.retrieve(existingUserName, (res) => {
+            console.log('response is: ', res[0].user_id);
+            page(`/kitlist/${res[0].user_id}`); //creates context object
+        });
     }
 
-    listView.initListPage = () => {
+    listView.initListPage = (ctx) => {
         $("main section").hide();
         $("#list-view").show();
+        console.log(ctx.items);
+        console.log(ctx);
         ctx.items.map(item => $('#list').append(item.toHtml()));
     };
 

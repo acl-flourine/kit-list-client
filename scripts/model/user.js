@@ -14,9 +14,22 @@ const API_URL = 'http://localhost:3000';
     };
 
     
-    User.dbEntry = user => {
+    User.create = (user, cb) => {
         $.post(`${API_URL}/api/v1/kitlist`, user)
-            .catch(console.error);
+            .catch(console.error)
+            .then( (data) => {
+                console.log(data)
+                cb(data)
+            })
+    }
+
+    User.retrieve = (userName, cb) => {
+        $.get(`${API_URL}/api/v1/kitlist/users/${userName}`)
+            .catch(console.error)
+            .then( (data) => {
+                console.log(data)
+                cb(data)
+            })
     }
       
 
