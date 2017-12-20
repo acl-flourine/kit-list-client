@@ -2,8 +2,8 @@
 
 var app = app || {};
 
-// const API_URL = 'https://kit-list.herokuapp.com'; 
-const API_URL = 'http://localhost:3000';
+const API_URL = 'https://kit-list.herokuapp.com'; 
+// const API_URL = 'http://localhost:3000';
 
 (function(module) {
     function User (obj) {
