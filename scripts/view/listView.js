@@ -3,14 +3,15 @@
 var app = app || {};
 
 (function (module) {
-
+    
     const listView = {};
-
+    
     listView.initHomePage = () => {
         $('main section').hide();
         $('#existing-user').parent().show();
         $('#find').on('click', listView.existingUser);
         $('#new-user').on('submit', listView.createUser); 
+        $("#about-link").on('click', listView.initAboutPage);
     };
 
     listView.createUser = event => {
@@ -48,9 +49,11 @@ var app = app || {};
         ctx.items.map(item => $('#list').append(item.toHtml()));
     };
 
-    // listView.initAboutPage = () => {
-    //     // you get the idea
-    // };
+    listView.initAboutPage = event => {
+        event.preventDefault();
+        $("main section").hide();
+        $("#about-view").show();
+     };
 
     
     module.listView = listView;
