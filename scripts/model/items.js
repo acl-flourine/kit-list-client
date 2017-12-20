@@ -17,7 +17,6 @@ var app = app || {};
         $.get(`${API_URL}/api/v1/kitlist/${ctx.params.user_id}`)
         .then(data => {
             Item.loadAll(data);
-            console.log(data);
             ctx.items = Item.all;
         })
         .then(cb)
@@ -25,7 +24,6 @@ var app = app || {};
     };
 
     Item.loadAll = (data) => {
-        console.log('****** load all data content: ', data)
         Item.all = data.map(obj => new Item (obj));
     }
 

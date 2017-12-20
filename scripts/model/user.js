@@ -13,7 +13,6 @@ const API_URL = 'https://kit-list.herokuapp.com';
         this.types = [base]
     };
 
-    
     User.create = (user, cb) => {
         $.post(`${API_URL}/api/v1/kitlist`, user)
             .catch(console.error)
@@ -30,8 +29,6 @@ const API_URL = 'https://kit-list.herokuapp.com';
             })
     }
       
-
-
     module.User = User;
     
 })(app);

@@ -14,12 +14,11 @@ let userWeather = {};
         this.conditions = obj.conditions;
     }
 
-
     Weather.getUserWeather = (id) => {
         $.get(`${API_URL}/api/v1/weather`, {id: id})
         .catch(console.error)
         .then( res => {
-            console.log('weather: ', res); // temp undefined, unable to capture resp.body info from server side
+            console.log('weather: ', res);
             userWeather = {
                 location: res[0],
                 temperature: res[1],
@@ -31,7 +30,6 @@ let userWeather = {};
             $('#weather-view').append(olympia.toHtml());
         })
     }
-console.log(userWeather);
 
     Weather.prototype.toHtml = function() {
         const weatherTemplate = $(`#weather-template`).html();

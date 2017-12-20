@@ -27,9 +27,8 @@ var app = app || {};
         $("input:checked").each((i, ele) => {
             newUser.types.push(ele.value);
         });
-        console.log("New user= ", newUser);
         app.User.create(newUser, (id) => {
-            page(`/kitlist/${id}`); //creates context object
+            page(`/kitlist/${id}`);
         });
     }
 
@@ -37,8 +36,7 @@ var app = app || {};
         event.preventDefault();
         const existingUserName = $('input[name="existing"]').val();
         app.User.retrieve(existingUserName, (res) => {
-            console.log(res);
-            page(`/kitlist/${res[0].user_id}`); //creates context object
+            page(`/kitlist/${res[0].user_id}`);
         });
     }
 
@@ -56,7 +54,6 @@ var app = app || {};
         $("#about-view").show();
      };
 
-    
     module.listView = listView;
 
 })(app);
