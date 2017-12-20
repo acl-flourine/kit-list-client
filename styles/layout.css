@@ -1,0 +1,33 @@
+#logo {
+    vertical-align: middle;
+    width: 35%;
+    margin-right: 20px;
+    margin-top: 15px;
+}
+
+#existing-user {
+    background-color: #ef4a3e;
+    padding: 3.5% 7.5%;
+    font-weight: bold;
+    margin: 0 auto;
+    display: flex;
+    justify-content: flex-start;
+}
+
+#existing-user  input{
+    margin: 0 40px 0 20px;
+}
+
+#list-view {
+    padding: 2.5% 7.5%;
+    background-color: #e8f5f7;
+}
+
+#about-view {
+    padding: 2.5% 7.5%;
+    background-color: #e8f5f7;
+}
+
+#weather-view {
+    padding: 2.5% 7.5%;
+}
