@@ -1,16 +1,12 @@
 body {
+    font-family: 'Source Sans Pro', sans-serif;
+    line-height: 1.45em;
+    color: #383838;
     margin: 0;
 }
 
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Source Sans Pro', sans-serif;    
-}
-
-body {
-    font-family: 'Source Sans Pro', sans-serif;
-    line-height: 1.45em;
-    color: #383838;
-    margin: 0;
 }
 
 nav {
@@ -42,12 +38,35 @@ nav ul li a {
     color: #383838;
 }
 
-nav ul li a:hover {
+nav a:hover, a:focus, a:active {
+    color: #ef4a3e;
+    text-decoration: none;
+}
+
+nav a {
+    position: relative;
+    display: block;
+    padding: 16px 0;
+    margin: 0 12px;
+    transition: color 0.1s,background-color 0.1s,padding 0.2s ease-in;
     color: #ef4a3e;
 }
 
-nav ul li a:active {
-    color: #ef4a3e;
+a::before {
+    content: '';
+    position: absolute;
+    bottom: 3px;
+    height: 3px;
+    width: 100%;
+    background-color: #ef4a3e;
+    transform-origin: right top;
+    transform: scale(0, 1);
+    transition: color 0.1s,transform 0.2s ease-out;
+}
+
+a:hover::before, a:focus::before {
+    transform-origin: left top;
+    transform: scale(1, 1);
 }
 
 #logo {
@@ -93,20 +112,21 @@ button#find {
 }
 
 button#find:hover{
-    background-color: #ef4a3e;
+    background-color: #F69C95;
 }
 
 button#submit-user {
-    background-color: #8FB996;
+    background-color: #59C9A5;
     display: block;
     clear: left;
     text-transform: uppercase;
     letter-spacing: 1px;
 }
 
-#new-user {
-    /* margin-top: 5%; */
+button#submit-user:hover{
+    background-color: #86D7BD;
 }
+
 
 fieldset {
     padding: 5% 7.5%;
@@ -130,6 +150,9 @@ label {
 input {
     margin-left: 10px;
     padding: 10px 10px;
+}
+
+#existing-user input {
     border: none;
 }
 
@@ -137,9 +160,4 @@ input {
     display: block;
     float: left;
     margin-bottom: 15px;
-}
-
-input[type="radio"] + .side-label::before,
-input[type="radio"] + .side-label::after {
-  border-radius: 50%;
 }
